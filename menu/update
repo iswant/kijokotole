@@ -2,4 +2,8 @@ cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu"
 mv ./menu /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
+rm update
+rm update.1
+rm update.2
+rm update.3
 echo "update succes boss " | lolcat
