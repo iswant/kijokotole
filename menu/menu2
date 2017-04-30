@@ -190,7 +190,7 @@ echo "        #        Copyright © BEGAL_ELITE-TEAM   2017        #"| lolcat
 echo "        ====================================================="| lolcat
 echo ""
 PS3='Silahkan ketik nomor pilihan anda lalu tekan ENTER: '
-options=("Buat User" "Buat User Trial" "Perbarui User" "Semua User" "Hapus User" "Monitor User Login" "Aktifkan Kill Multi Login" "Matikan Kill Multi Login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Quit")
+options=("Buat User" "Buat User Trial" "Perbarui User" "Semua User" "Hapus User" "Monitor User Login" "Aktifkan Kill Multi Login" "Matikan Kill Multi Login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Edit Banner Login" "Lihat Lokasi User" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -349,6 +349,20 @@ Port dropbear tidak boleh sama dengan port openVPN/openSSH/squid3 !!!"| boxes -d
 			python speedtest.py --share | lolcat
 			break		
 			;;
+	"Edit Banner Login")
+	echo -e "1. Simpan text (CTRL + X, lalu ketik Y dan tekan Enter)
+	2. Membatalkan edit text (CTRL + X, lalu ketik N dan tekan Enter)" | boxes -d boy | lolcat
+	read -p "Tekan ENTER untuk melanjutkan........................ " | lolcat
+	nano /bannerssh
+	service ssh restart &&  service dropbear restart
+	break
+	;;
+	"Lihat Lokasi User")
+	lokasi
+read -p "Ketik Salah Satu Alamat IP User: " userip
+curl ipinfo.io/$userip
+break
+;;
 		"Quit")
 		
 		break
