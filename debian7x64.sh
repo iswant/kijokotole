@@ -229,8 +229,8 @@ chmod +x speedtest.py
 
 # Install Menu
 cd
-wget "https://raw.githubusercontent.com/iswant/kijokotole/master/menu/menu"
-mv ./menu /usr/local/bin/menu
+wget "https://raw.githubusercontent.com/iswant/kijokotole/master/menu/mmm"
+mv ./mmm /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
 
 # swap ram
