@@ -67,14 +67,14 @@ apt-get install boxes
 # squid3
 apt-get update
 apt-get -y install squid3
-wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/kijotole/kijokotole/master/squid/squid.conf"
+wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/iswant/kijokotole/master/squid/squid.conf"
 sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
 chmod 0640 /etc/squid3/squid.conf
 
 # text warna
 cd
 rm -rf .bashrc
-wget https://raw.githubusercontent.com/kijotole/kijokotole/master/text%20warna/.bashrc
+wget https://raw.githubusercontent.com/iswant/kijokotole/master/text%20warna/.bashrc
 
 # text pelangi
 sudo apt-get install ruby -y
@@ -84,23 +84,23 @@ sudo gem install lolcat
 apt-get -y install nginx php5-fpm php5-cli
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/kijotole/kijokotole/master/conf/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/iswant/kijokotole/master/conf/nginx.conf"
 mkdir -p /home/vps/public_html
 echo "<pre>Setup by BEGAL_ELITE-TEAM | telegram : UNKNOW | Pin BBM : UNKNOW</pre>" > /home/vps/public_html/index.php
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/kijotole/kijokotole/master/conf/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/iswant/kijokotole/master/conf/vps.conf"
 sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
 
 # install openvpn
 apt-get install openvpn -y
-wget -O /etc/openvpn/openvpn.tar "https://raw.github.com/kijotole/kijokotole/master/conf/openvpn-debian.tar"
+wget -O /etc/openvpn/openvpn.tar "https://raw.github.com/iswant/kijokotole/master/conf/openvpn-debian.tar"
 cd /etc/openvpn/
 tar xf openvpn.tar
-wget -O /etc/openvpn/1194.conf "https://raw.github.com/kijotole/kijokotole/master/conf/1194.conf"
+wget -O /etc/openvpn/1194.conf "https://raw.github.com/iswant/kijokotole/master/conf/1194.conf"
 service openvpn restart
 sysctl -w net.ipv4.ip_forward=1
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
-wget -O /etc/iptables.conf "https://raw.github.com/kijotole/kijokotole/master/conf/iptables.conf"
+wget -O /etc/iptables.conf "https://raw.github.com/iswant/kijokotole/master/conf/iptables.conf"
 sed -i '$ i\iptables-restore < /etc/iptables.conf' /etc/rc.local
 
 myip2="s/ipserver/$myip/g";
@@ -110,7 +110,7 @@ service openvpn restart
 
 # configure openvpn client config
 cd /etc/openvpn/
-wget -O /etc/openvpn/1194-client.ovpn "https://raw.github.com/kijotole/kijokotole/master/conf/1194-client.conf"
+wget -O /etc/openvpn/1194-client.ovpn "https://raw.github.com/iswant/kijokotole/master/conf/1194-client.conf"
 sed -i $myip2 /etc/openvpn/1194-client.ovpn;
 PASS= `cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
 usermod -s /bin/false mail
@@ -126,7 +126,7 @@ sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
 service ssh restart
 
 # encrypt file
-wget https://raw.githubusercontent.com/kijotole/kijokotole/master/shc-3.8.7.tgz
+wget https://raw.githubusercontent.com/iswant/kijokotole/master/shc-3.8.7.tgz
 tar xvfz shc-3.8.7.tgz
 cd shc-3.8.7
 make
@@ -143,7 +143,7 @@ service ssh restart
 service dropbear restart
 
 # bannerssh
-wget https://raw.githubusercontent.com/kijotole/kijokotole/master/menu/bannersshlink.sh
+wget https://raw.githubusercontent.com/iswant/kijokotole/master/menu/bannersshlink.sh
 chmod 700 bannersshlink.sh
 ./bannersshlink.sh
 rm bannersshlink.sh
@@ -192,8 +192,8 @@ echo "*/3* * * * root ./clearcache.sh" > /etc/cron.d/clearcache
 
 # tool 
 cd
-wget -O userlimit.sh "https://raw.githubusercontent.com/kijotole/kijokotole/master/menu/userlimit.sh"
-wget -O userexpired.sh "https://raw.githubusercontent.com/kijotole/kijokotole/master/menu/userexpired.sh"
+wget -O userlimit.sh "https://raw.githubusercontent.com/iswant/kijokotole/master/menu/userlimit.sh"
+wget -O userexpired.sh "https://raw.githubusercontent.com/iswant/kijokotole/master/menu/userexpired.sh"
 #wget -O autokill.sh "https://raw.githubusercontent.com/yusuf-ardiansyah/blangkon/master/menu/autokill.sh"
 #wget -O userlimitssh.sh "https://raw.githubusercontent.com/yusuf-ardiansyah/blangkon/master/menu/userlimitssh.sh"
 echo "@reboot root /root/userexpired.sh" > /etc/cron.d/userexpired
@@ -207,7 +207,7 @@ chmod 755 userlimit.sh
 #chmod +x userlimitssh.sh
 
 # clear cache
-wget -O clearcache.sh "https://raw.githubusercontent.com/kijotole/kijokotole/master/clearcache/clearcache.sh"
+wget -O clearcache.sh "https://raw.githubusercontent.com/iswant/kijokotole/master/clearcache/clearcache.sh"
 #echo "@reboot root /root/clearcache.sh" > /etc/cron.d/clearcache
 chmod 755 /root/clearcache.sh
 
@@ -224,13 +224,13 @@ iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 # speedtest
 cd
 apt-get install python
-wget -O speedtest.py "https://raw.githubusercontent.com/kijotole/kijokotole/master/menu/speedtest.py"
+wget -O speedtest.py "https://raw.githubusercontent.com/iswant/kijokotole/master/menu/speedtest.py"
 chmod +x speedtest.py
 
 # Install Menu
 cd
-wget "https://raw.githubusercontent.com/kijotole/kijokotole/master/menu/menu2"
-mv ./menu2 /usr/local/bin/menu
+wget "https://raw.githubusercontent.com/iswant/kijokotole/master/menu/mmm"
+mv ./mmm /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
 
 # swap ram
@@ -240,7 +240,7 @@ mkswap /swapfile
 # jalan swapfile
 swapon /swapfile
 #auto star saat reboot
-wget https://raw.githubusercontent.com/kijotole/kijokotole/master/ram/fstab
+wget https://raw.githubusercontent.com/iswant/kijokotole/master/ram/fstab
 mv ./fstab /etc/fstab
 chmod 644 /etc/fstab
 sysctl vm.swappiness=70
