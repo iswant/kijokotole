@@ -367,7 +367,7 @@ break
        cd
 wget "https://raw.githubusercontent.com/iswant/kijokotole/master/menu/update"
 chmod +x update
-update
+./update
 break
 ;;
 		"Quit")
