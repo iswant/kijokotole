@@ -174,7 +174,7 @@ function lokasi(){
 
 data=( `ps aux | grep -i dropbear | awk '{print $2}'`);
 
-echo "User Login" | boxes -d peek | lolcat;
+#echo "User Login" | boxes -d peek | lolcat;
 echo "=================================";
 echo "Dropbear" | lolcat
 for PID in "${data[@]}"
