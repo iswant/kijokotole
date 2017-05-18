@@ -219,12 +219,12 @@ echo "" | lolcat
 echo "" | lolcat
 echo "        ----[SELAMAT DATANG DI VPS BEGAL_ELITE-TEAM]---"| boxes -d dog | lolcat
 echo "        ====================================================="| lolcat
-echo "        #           WhatsApp     : 085708173517             #"| lolcat
-echo "        #           Facebook     : fb.com/thethemith        #"| lolcat
-echo "        #           Pin-BBM      : D2C54FDA                 #"| lolcat
-echo "        #                                                   #"| lolcat
-echo "        #        Copyright © BEGAL_ELITE-TEAM   2017        #"| lolcat
-echo "        ====================================================="| lolcat
+echo "        #           WhatsApp     : 085708173517             #" | lolcat
+echo "        #           Facebook     : fb.com/thethemith        #" | lolcat
+echo "        #           Pin-BBM      : D2C54FDA                 #" | lolcat
+echo "        #                                                   #" | lolcat
+echo "        #        Copyright © BEGAL_ELITE-TEAM   2017        #" | lolcat
+echo "        =====================================================" | lolcat
 echo ""
 PS3='Silahkan ketik nomor pilihan anda lalu tekan ENTER: '
 options=("Buat User" "Buat User Trial" "Perbarui User" "Semua User" "Hapus User" "Monitor User Login" "Aktifkan Kill Multi Login" "Matikan Kill Multi Login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Edit Banner Login" "Lihat Lokasi User" "Quit")
